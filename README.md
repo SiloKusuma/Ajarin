@@ -11,7 +11,19 @@ Website AI Learning Platform dibuat dengan Next.js dan Tailwind CSS.
 ## Cara pakai
 1. Salin `.env.example` menjadi `.env.local`
 2. Isi `GROQ_API_KEY` dengan API key Groq Anda.
-3. Jalankan `npm install` lalu `npm run dev`.
+3. Isi `GROQ_API_URL` dengan `https://api.groq.com/v1/responses`.
+4. Jalankan `npm install` lalu `npm run dev`.
+
+## Deploy ke Vercel
+- Pastikan project menggunakan preset **Next.js**.
+- Build Command: `npm run build`
+- Install Command: `npm install`
+- Output Directory: kosongkan / biarkan default (jangan gunakan `public`).
+- Atur Environment Variables di Vercel:
+  - `GROQ_API_KEY`
+  - `GROQ_API_URL`
+
+Jika kamu melihat error "No Output Directory named `public` found after the Build completed", itu berarti Vercel sedang disetel untuk output static. Dengan `vercel.json` yang sudah ada, Vercel akan menggunakan build Next.js, jadi biarkan setting output default kosong.
 
 ## Struktur
 - `app/page.tsx`: halaman utama dan logika interaktif.
