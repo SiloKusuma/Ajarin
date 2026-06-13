@@ -22,8 +22,11 @@ Website AI Learning Platform dibuat dengan Next.js dan Tailwind CSS.
 - Atur Environment Variables di Vercel:
   - `GROQ_API_KEY`
   - `GROQ_API_URL`
+  - `GROQ_MODEL` (opsional, default: `openai/gpt-oss-120b`)
 
 Jika kamu melihat error "No Output Directory named `public` found after the Build completed", itu berarti Vercel sedang disetel untuk output static. Dengan `vercel.json` yang sudah ada, Vercel akan menggunakan build Next.js, jadi biarkan setting output default kosong.
+
+> Pastikan env vars diatur di environment yang benar (Production atau Preview), bukan hanya di Local Development. Nama variabel harus persis sama dan tidak ada spasi ekstra.
 
 ## Struktur
 - `app/page.tsx`: halaman utama dan logika interaktif.
