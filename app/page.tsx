@@ -46,6 +46,8 @@ export default function HomePage() {
   const [showResult, setShowResult] = useState(false);
   const [generated, setGenerated] = useState('');
   const [quizAnswer, setQuizAnswer] = useState('A');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const prompt = useMemo(
     () => generatePrompt({ subject, level, topic, interests }),
@@ -58,24 +60,35 @@ export default function HomePage() {
 
   const handleGenerate = async () => {
     if (!subject || !level || !topic) return;
-    const simulated = `Materi ${topic} untuk ${levels.find((item) => item.id === level)?.name || ''}.
-
-1. Pengantar ${topic}
-2. Konsep dasar yang penting
-3. Contoh yang sesuai dengan hobi ${interests.hobi}
-
-Soal latihan:
-A. Pilihan A
-B. Pilihan B
-C. Pilihan C
-D. Pilihan D
-
-Jawaban benar: A
-Pembahasan: ...`;
-    setGenerated(simulated);
-    setStep(4);
+    setLoading(true);
+    setError('');
+    setGenerated('');
     setShowResult(false);
     setFeedback('');
+
+    try {
+      const response = await fetch('/api/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data?.error || 'Gagal memanggil layanan AI.');
+      }
+
+      const data = await response.json();
+      const resultText = data?.output || JSON.stringify(data, null, 2);
+      setGenerated(typeof resultText === 'string' ? resultText : JSON.stringify(resultText, null, 2));
+      setStep(4);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Terjadi kesalahan tidak terduga.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleAnswerSubmit = () => {
@@ -250,10 +263,15 @@ Pembahasan: ...`;
             <h3 className="text-2xl font-semibold text-slate-900">Preview Hasil AI</h3>
             <p className="mt-3 text-slate-600">Konten akan muncul di sini setelah kamu memilih semua data belajar.</p>
             <div className="mt-6 space-y-4 rounded-3xl bg-slate-50 p-5 text-slate-700">
-              {generated ? (
+              {loading ? (
+                <p className="text-slate-600">Memuat materi...</p>
+              ) : generated ? (
                 <pre className="whitespace-pre-wrap text-sm leading-7">{generated}</pre>
               ) : (
                 <p className="text-slate-500">Tidak ada konten. Lengkapi langkah di atas lalu tekan tombol.</p>
+              )}
+              {error && (
+                <p className="mt-3 rounded-2xl bg-rose-100 px-4 py-3 text-sm text-rose-800">{error}</p>
               )}
             </div>
             {generated && (
