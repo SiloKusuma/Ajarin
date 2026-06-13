@@ -1,4 +1,4 @@
-# Ajarin AI Learning Platform
+# AJARIN - Platform Belajar AI yang Personal Platform
 
 Website AI Learning Platform dibuat dengan Next.js dan Tailwind CSS.
 

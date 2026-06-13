@@ -1,11 +1,162 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import FadeIn from './components/FadeIn';
-import ContactButton from './components/ContactButton';
-import LiveProjectButton from './components/LiveProjectButton';
-import Magnet from './components/Magnet';
-import AnimatedText from './components/AnimatedText';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
+
+export default function LandingPage() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+      }`}>
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="text-2xl font-bold text-amber-600">
+            AJARIN
+          </div>
+          <div className="hidden md:flex gap-8">
+            <a href="#features" className="text-gray-600 hover:text-amber-600 transition">Fitur</a>
+            <a href="#about" className="text-gray-600 hover:text-amber-600 transition">Tentang</a>
+            <Link href="/learn" className="btn-primary">
+              Mulai Belajar
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-amber-50 to-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            Belajar dengan <span className="text-amber-600">AI yang Personal</span>
+          </h1>
+          <p className="text-xl text-gray-600 mb-12 leading-relaxed">
+            Platform belajar cerdas yang memahami Anda. Materi dan soal disesuaikan dengan minat, hobi, dan gaya belajar unik Anda.
+          </p>
+          <div className="flex gap-6 justify-center flex-wrap">
+            <Link href="/learn" className="btn-primary text-lg px-8 py-3">
+              Mulai Sekarang
+            </Link>
+            <a href="#features" className="btn-secondary text-lg px-8 py-3">
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-24 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            Mengapa Memilih AJARIN?
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="card">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Personalisasi Penuh</h3>
+              <p className="text-gray-600">
+                Setiap materi disesuaikan berdasarkan minat dan gaya belajar unik Anda.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="card">
+              <div className="text-4xl mb-4">🤖</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">AI Canggih</h3>
+              <p className="text-gray-600">
+                Teknologi AI terbaru untuk menciptakan pengalaman belajar yang efektif.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="card">
+              <div className="text-4xl mb-4">📚</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Berbagai Mata Pelajaran</h3>
+              <p className="text-gray-600">
+                Bahasa Indonesia, Informatika, dan lebih banyak lagi untuk semua tingkat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 px-6 bg-amber-50">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            Bagaimana AJARIN Bekerja?
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            {[
+              { num: 1, title: 'Pilih Mata Pelajaran', desc: 'Pilih antara Bahasa Indonesia atau Informatika' },
+              { num: 2, title: 'Tentukan Tingkat', desc: 'Pilih tingkat sekolah (SD, SMP, SMA)' },
+              { num: 3, title: 'Bagikan Minat', desc: 'Ceritakan hobi dan kesukaan Anda' },
+              { num: 4, title: 'Mulai Belajar', desc: 'Dapatkan materi dan soal yang personal' },
+            ].map((step) => (
+              <div key={step.num} className="relative">
+                <div className="bg-white rounded-lg p-6 text-center h-full border-2 border-amber-600">
+                  <div className="w-12 h-12 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                    {step.num}
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 px-6">
+        <div className="container mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            Tentang AJARIN
+          </h2>
+          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            AJARIN adalah platform pembelajaran inovatif yang menggabungkan kecerdasan buatan dengan personalisasi mendalam. Kami percaya bahwa setiap siswa memiliki gaya belajar unik, dan platform kami dirancang untuk mengakomodasi kebutuhan individual tersebut.
+          </p>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Dengan memahami minat dan preferensi Anda, kami menciptakan pengalaman belajar yang tidak hanya efektif tetapi juga menyenangkan dan engaging.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 px-6 bg-amber-600 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-8">Siap untuk Belajar?</h2>
+          <p className="text-xl mb-12 opacity-90">
+            Mulai perjalanan belajar Anda hari ini dengan AJARIN
+          </p>
+          <Link href="/learn" className="inline-flex items-center justify-center px-8 py-3 bg-white text-amber-600 font-bold rounded-full hover:bg-gray-100 transition transform hover:scale-105 text-lg">
+            Mulai Sekarang
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-8 px-6">
+        <div className="container mx-auto text-center">
+          <p>&copy; 2024 AJARIN. Platform Belajar AI yang Personal. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
 
 export default function Home() {
   const marqueeRef = useRef<HTMLDivElement | null>(null);
