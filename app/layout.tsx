@@ -1,14 +1,14 @@
+import type { ReactNode } from 'react';
 import './globals.css';
-import { ReactNode } from 'react';
 
 export const metadata = {
-  title: 'Ajarin AI Learning',
-  description: 'AI learning platform to create custom study material and quizzes.',
+  title: 'Jack | 3D Creator & Visual Designer',
+  description: 'Bold 3D visual storytelling, motion-led product experiences, and atmospheric portfolio design.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="id">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

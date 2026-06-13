@@ -1,11 +1,11 @@
 "use client";
 
+import { useEffect, useRef, useState } from 'react';
 import FadeIn from './components/FadeIn';
 import ContactButton from './components/ContactButton';
 import LiveProjectButton from './components/LiveProjectButton';
 import Magnet from './components/Magnet';
 import AnimatedText from './components/AnimatedText';
-import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const marqueeRef = useRef<HTMLDivElement | null>(null);
