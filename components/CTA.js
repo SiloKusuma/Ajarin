@@ -2,12 +2,8 @@ import Link from 'next/link'
 
 export default function CTA() {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-gray-900">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bannercta.png')" }}
-      />
-      <div className="absolute inset-0 bg-black/50" />
+    <section className="py-20 md:py-28 bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800 relative overflow-hidden">
+      <div className="absolute inset-0" />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 fade-in">
