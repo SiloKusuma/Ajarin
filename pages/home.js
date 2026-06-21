@@ -110,7 +110,7 @@ export default function HomePage() {
                 <div key={s.num} className="flex items-center flex-1">
                   <div className="flex flex-col items-center">
                     <div className={`
-                      w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300
+                      w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold
                       ${step === s.num ? 'step-number' :
                         step > s.num ? 'step-number-completed' : 'step-number-inactive'}
                     `}>
@@ -121,7 +121,7 @@ export default function HomePage() {
                     </span>
                   </div>
                   {i < steps.length - 1 && (
-                    <div className={`flex-1 h-0.5 mx-2 mt-[-1.5rem] transition-colors duration-300 ${
+                    <div className={`flex-1 h-0.5 mx-2 mt-[-1.5rem] ${
                       step > s.num ? 'bg-green-400' : 'bg-gray-200'
                     }`} />
                   )}
