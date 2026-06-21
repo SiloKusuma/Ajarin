@@ -1,28 +1,29 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#fff8f1',
-          100: '#ffeedc',
-          200: '#ffd4ae',
-          300: '#ffb27c',
-          400: '#ff8d45',
-          500: '#ff760f',
-          600: '#f1580f',
-          700: '#c7430d',
-          800: '#9f340a',
-          900: '#7f2c08',
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
       },
-      boxShadow: {
-        soft: '0 20px 60px rgba(255, 152, 0, 0.12)',
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
     },
   },
   plugins: [],
-};
+}
