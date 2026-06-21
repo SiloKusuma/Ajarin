@@ -40,7 +40,7 @@ export default function HowItWorks() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {steps.map((step, index) => (
               <div key={index} className="relative text-center fade-in" style={{ animationDelay: `${index * 0.15}s` }}>
-                <div className="hidden md:flex absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary-600 text-white rounded-full items-center justify-center font-bold text-lg shadow-lg shadow-primary-200 z-10">
+                <div className="hidden md:flex absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary-600 text-white rounded-full items-center justify-center font-bold text-lg z-10">
                   {step.number}
                 </div>
 

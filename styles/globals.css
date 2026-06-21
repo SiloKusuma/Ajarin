@@ -15,11 +15,11 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-8 rounded-xl transition-all duration-200 active:scale-[0.98];
+    @apply bg-primary-600 text-white font-medium py-3 px-8 rounded-xl;
   }
 
   .btn-outline {
-    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-medium py-3 px-8 rounded-xl transition-all duration-200;
+    @apply border-2 border-primary-600 text-primary-600 font-medium py-3 px-8 rounded-xl;
   }
 
   .btn-disabled {
@@ -27,7 +27,7 @@ body {
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6 transition-all duration-200 hover:shadow-md;
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6 transition-all duration-200;
   }
 
   .section-title {

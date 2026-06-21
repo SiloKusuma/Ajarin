@@ -111,7 +111,7 @@ export default function HomePage() {
                   <div className="flex flex-col items-center">
                     <div className={`
                       w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300
-                      ${step === s.num ? 'step-number shadow-lg shadow-primary-200' :
+                      ${step === s.num ? 'step-number' :
                         step > s.num ? 'step-number-completed' : 'step-number-inactive'}
                     `}>
                       {step > s.num ? <i className="bi bi-check-lg"></i> : s.num}

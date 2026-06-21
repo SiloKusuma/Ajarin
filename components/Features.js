@@ -47,7 +47,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="card group hover:border-primary-100 hover:shadow-lg hover:shadow-primary-50 fade-in"
+              className="card group hover:border-primary-100 fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary-100 transition-colors">

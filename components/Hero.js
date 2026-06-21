@@ -3,10 +3,7 @@ import Link from 'next/link'
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-blue-50">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 rounded-full blur-3xl opacity-60" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-60" />
-      </div>
+      <div className="absolute inset-0" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 md:pt-28 md:pb-36">
         <div className="text-center max-w-4xl mx-auto">

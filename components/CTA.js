@@ -3,10 +3,7 @@ import Link from 'next/link'
 export default function CTA() {
   return (
     <section className="py-20 md:py-28 bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800 relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
-      </div>
+      <div className="absolute inset-0" />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 fade-in">
@@ -19,7 +16,7 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in stagger-2">
           <Link
             href="/home"
-            className="bg-white text-primary-700 hover:bg-primary-50 font-semibold py-4 px-10 rounded-xl text-lg transition-all duration-200 inline-flex items-center gap-2"
+            className="bg-white text-primary-700 font-semibold py-4 px-10 rounded-xl text-lg transition-colors duration-200 inline-flex items-center gap-2"
           >
             Mulai Belajar Gratis
             <i className="bi bi-arrow-right"></i>
