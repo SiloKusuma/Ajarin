@@ -40,34 +40,6 @@ export default function About() {
             </div>
           </div>
         </section>
-
-        <section className="py-16 md:py-24 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-              Visi & Misi
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <i className="bi bi-eye text-2xl text-primary-600"></i>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Visi</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <i className="bi bi-bullseye text-2xl text-primary-600"></i>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Misi</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   )
