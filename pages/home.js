@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef } from 'react'
 import StepInput from '@/components/StepInput'
 import StepVerify from '@/components/StepVerify'
 import StepLoading from '@/components/StepLoading'
@@ -15,16 +15,16 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false)
   const resultRef = useRef(null)
 
-  const handleInputSubmit = useCallback((inputTopic, inputMaterial) => {
+  const handleInputSubmit = (inputTopic, inputMaterial) => {
     setTopic(inputTopic)
     setMaterial(inputMaterial)
     setStep(2)
-  }, [])
+  }
 
-  const handleVerify = useCallback((token) => {
+  const handleVerify = (token) => {
     setTurnstileToken(token)
     generateContent(token)
-  }, [])
+  }
 
   const generateContent = async (token) => {
     setLoading(true)

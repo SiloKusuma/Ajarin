@@ -19,7 +19,7 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in stagger-2">
           <Link
             href="/home"
-            className="bg-white text-primary-700 hover:bg-primary-50 font-semibold py-4 px-10 rounded-xl text-lg transition-all duration-200 hover:shadow-xl inline-flex items-center gap-2"
+            className="bg-white text-primary-700 hover:bg-primary-50 font-semibold py-4 px-10 rounded-xl text-lg transition-all duration-200 inline-flex items-center gap-2"
           >
             Mulai Belajar Gratis
             <i className="bi bi-arrow-right"></i>

@@ -37,7 +37,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center text-white group-hover:shadow-lg group-hover:shadow-primary-200 transition-all duration-200">
+            <div className="w-9 h-9 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center text-white transition-all duration-200">
               <i className="bi bi-book-fill text-sm"></i>
             </div>
             <span className="text-xl font-bold text-gray-900">
@@ -62,7 +62,7 @@ export default function Navbar() {
             {!isHome && (
               <Link
                 href="/home"
-                className="ml-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium px-5 py-2 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-primary-200"
+                className="ml-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium px-5 py-2 rounded-lg transition-all duration-200"
               >
                 Mulai Belajar
               </Link>
