@@ -2,12 +2,11 @@ import Link from 'next/link'
 
 export default function CTA() {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden bg-gray-900">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bannercta.png')" }}
-      />
-      <div className="absolute inset-0 bg-black/50" />
+    <section className="py-20 md:py-28 relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-blue-800">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-300 rounded-full blur-3xl" />
+      </div>
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 fade-in">
@@ -20,7 +19,7 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in stagger-2">
           <Link
             href="/home"
-            className="bg-white text-primary-700 font-semibold py-4 px-10 rounded-xl text-lg transition-colors duration-200 inline-flex items-center gap-2"
+            className="bg-white text-primary-700 font-semibold py-4 px-10 rounded-xl text-lg transition-colors duration-200 inline-flex items-center gap-2 hover:bg-primary-50"
           >
             Mulai Belajar Gratis
             <i className="bi bi-arrow-right"></i>
