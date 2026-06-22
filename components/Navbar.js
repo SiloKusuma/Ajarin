@@ -27,6 +27,7 @@ export default function Navbar() {
     { href: '/', label: 'Beranda' },
     { href: '/#features', label: 'Fitur' },
     { href: '/#how-it-works', label: 'Cara Kerja' },
+    { href: '/flashcard', label: 'Flashcard' },
     ...(isHome ? [] : [{ href: '/home', label: 'Mulai Belajar' }]),
   ]
 
