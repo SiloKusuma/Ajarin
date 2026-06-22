@@ -105,26 +105,29 @@ export default function HomePage() {
           </div>
 
           <div className="mb-8">
-            <div className="flex items-center justify-between max-w-2xl mx-auto">
+            <div className="flex items-center justify-center max-w-lg mx-auto">
               {steps.map((s, i) => (
-                <div key={s.num} className="flex items-center flex-1">
-                  <div className="flex flex-col items-center">
+                <div key={s.num} className="flex flex-col items-center flex-1">
+                  <div className="flex items-center w-full">
+                    {i > 0 && (
+                      <div className={`flex-1 h-0.5 ${step > i ? 'bg-green-400' : 'bg-gray-200'}`} />
+                    )}
+                    {i === 0 && <div className="flex-1" />}
                     <div className={`
-                      w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold
+                      w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold shrink-0
                       ${step === s.num ? 'step-number' :
                         step > s.num ? 'step-number-completed' : 'step-number-inactive'}
                     `}>
                       {step > s.num ? <i className="bi bi-check-lg"></i> : s.num}
                     </div>
-                    <span className={`text-xs mt-2 hidden sm:block ${step >= s.num ? 'text-primary-600 font-medium' : 'text-gray-400'}`}>
-                      {s.label}
-                    </span>
+                    {i < steps.length - 1 && (
+                      <div className={`flex-1 h-0.5 ${step > s.num ? 'bg-green-400' : 'bg-gray-200'}`} />
+                    )}
+                    {i === steps.length - 1 && <div className="flex-1" />}
                   </div>
-                  {i < steps.length - 1 && (
-                    <div className={`flex-1 h-0.5 mx-2 mt-[-1.5rem] ${
-                      step > s.num ? 'bg-green-400' : 'bg-gray-200'
-                    }`} />
-                  )}
+                  <span className={`text-xs mt-2 hidden sm:block text-center ${step >= s.num ? 'text-primary-600 font-medium' : 'text-gray-400'}`}>
+                    {s.label}
+                  </span>
                 </div>
               ))}
             </div>
